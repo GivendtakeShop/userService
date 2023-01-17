@@ -1,0 +1,1 @@
+INSERT INTO public.users (id, address, email, gender, password, phone, role, user_name) VALUES ('cca21d1f-aa47-429d-a3c1-58a438b304a7', null, 'taha1@email.com', null, '$2a$10$CfhEyWNVG6ooHmMBo8UZ/.W8s58J7ZV9ElS9NDHEdDNiPfUEv642q', '+212640864066', 'ROLE_ADMIN', 'taha');
