@@ -23,6 +23,7 @@ public class UserMapper {
                 .gender(user.getGender())
                 .phone(user.getPhone())
                 .address(user.getAddress())
+                .role(user.getRole())
                 .build();
     }
     public User userCommandToUser(UserCommand userCommand){

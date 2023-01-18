@@ -4,6 +4,7 @@ import com.giveandtake.userService.entities.User;
 import com.giveandtake.userService.exceptions.BusinessException;
 import com.giveandtake.userService.exceptions.ExceptionPayloadFactory;
 import com.giveandtake.userService.repositories.UserRepository;
+import com.giveandtake.userService.utilities.Assert;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -20,6 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Assert.assertNotNull(email);
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new BusinessException(ExceptionPayloadFactory.USER_NOT_FOUND.get()));
 
