@@ -6,6 +6,11 @@ import com.giveandtake.userService.dtos.LoginDTO;
 import com.giveandtake.userService.dtos.UserDTO;
 import com.giveandtake.userService.dtos.mappers.UserMapper;
 import com.giveandtake.userService.services.AuthService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

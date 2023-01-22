@@ -1,5 +1,6 @@
 package com.giveandtake.userService.services.users;
 
+import com.giveandtake.userService.entities.Role;
 import com.giveandtake.userService.entities.User;
 import com.giveandtake.userService.exceptions.BusinessException;
 import com.giveandtake.userService.exceptions.ExceptionPayload;
@@ -17,7 +18,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     @Override
     public List<User> getUsers() {
-        return userRepository.findAll();
+        return userRepository.findAllByRole(Role.ROLE_CLIENT);
     }
 
     @Override

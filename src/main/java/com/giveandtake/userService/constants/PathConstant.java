@@ -11,6 +11,11 @@ public class PathConstant {
     public final static String SIGNUP = "/signup";
 
     public final static String LOGIN = "/login";
+    public final static String FILE = "/files";
+
+    public final static String COVER = "/cover";
+
+
 
 
 

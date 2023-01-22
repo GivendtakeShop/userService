@@ -3,6 +3,7 @@ package com.giveandtake.userService.dtos.mappers;
 
 import com.giveandtake.userService.commands.UserCommand;
 import com.giveandtake.userService.dtos.UserDTO;
+import com.giveandtake.userService.entities.File;
 import com.giveandtake.userService.entities.Role;
 import com.giveandtake.userService.entities.User;
 import lombok.RequiredArgsConstructor;
@@ -11,11 +12,15 @@ import org.mapstruct.Named;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
 public class UserMapper {
     private final PasswordEncoder passwordEncoder;
     public UserDTO userToUserDTO(User user){
+        String imageId = null;
+        if(user.getImg()!=null) imageId = user.getImg().getId();
         return UserDTO.builder()
                 .id(user.getId())
                 .userName(user.getUserName())
@@ -24,6 +29,7 @@ public class UserMapper {
                 .phone(user.getPhone())
                 .address(user.getAddress())
                 .role(user.getRole())
+                .imageId(imageId)
                 .build();
     }
     public User userCommandToUser(UserCommand userCommand){
